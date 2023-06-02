@@ -9,16 +9,22 @@ function calculator() {
     return calculator();
   }
 
-  const firstNumber = readlineSync.question('Please enter the first number: ');
-  if (isNaN(firstNumber)) {
+  let firstNumber;
+  while (true) {
+    firstNumber = readlineSync.question('Please enter the first number: ');
+    if (!isNaN(firstNumber)) {
+      break;
+    }
     console.log('This is not a number');
-    return calculator();
   }
 
-  const secondNumber = readlineSync.question('Please enter the second number: ');
-  if (isNaN(secondNumber)) {
+  let secondNumber;
+  while (true) {
+    secondNumber = readlineSync.question('Please enter the second number: ');
+    if (!isNaN(secondNumber)) {
+      break;
+    }
     console.log('This is not a number');
-    return calculator();
   }
 
   const result = performOperation(parseFloat(firstNumber), parseFloat(secondNumber), operation);
